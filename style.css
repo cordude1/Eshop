@@ -1,0 +1,175 @@
+:root {
+  --mobile-spacing: 5px;
+  --desktop-spacing: 22px;
+
+  --primary:#43cbff;
+  --secondary:#b3b3f4;
+  --lightblue:#00e2ff;
+  --turcoise:#00f0c8;
+  --green:#61f363;
+}
+
+
+body {
+  font-family: "Poppins";
+}
+
+#header-logo:hover {
+  color: black;
+}
+
+a{
+  color:black;
+}
+
+#footer {
+  background-color: var(--secondary);
+  padding: 20px;
+}
+
+header {
+  padding: 10px;
+  background-image: linear-gradient(
+    to right,
+    var(--secondary),
+    var(--primary),
+    var(--lightblue),
+    var(--turcoise),
+    var(--green)
+  );
+}
+
+#meniu li {
+  margin-right: 20px;
+}
+
+.sub-menu {
+  width: fit-content;
+  background-color: black;
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  margin-top: 14px;
+  height: fit-content;
+}
+
+.sub-menu-item:hover {
+  background-color: darkgray;
+  cursor: pointer;
+  width: 130px;
+}
+
+#menu-1 {
+  display: none;
+}
+
+#menu-2 {
+  display: none;
+}
+
+#menu-3 {
+  display: none;
+}
+
+#menu-4 {
+  display: none;
+}
+
+.imagine-fundal {
+  width: 100%;
+  height:100%;
+  box-shadow: 3px 3px 10px grey;
+  border-radius: 10px;
+}
+.img-big {
+  display: none;
+}
+.img-medium {
+  display: none;
+}
+.img-small {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .img-small {
+    display: block;
+  }
+  .img-medium {
+    display: none;
+  }
+  main {
+    padding: var(--mobile-spacing);
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .img-small {
+    display: none;
+  }
+  .img-medium {
+    display: block;
+  }
+  main {
+    padding: var(--desktop-spacing);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .img-small {
+    display: none;
+  }
+  .img-medium {
+    display: none;
+  }
+  .img-big {
+    display: block;
+  }
+  main {
+    padding: var(--desktop-spacing);
+  }
+}
+
+#to-top-button {
+  user-select: none;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: white;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+#to-top-button:hover {
+  background-color: var(--turcoise);
+}
+
+/*pagini / navigare*/
+#homepage {
+  display: block;
+}
+#recomandari {
+  display: none;
+}
+#hrana-caini{
+  display: none;
+}
+
+
+#hrana-caini-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.card{
+   border:1px solid grey;
+   padding:10px;
+   
+}
