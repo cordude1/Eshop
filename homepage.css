@@ -4,6 +4,15 @@
   gap: 10px;
 }
 
+.my-card {
+  background-color: rgb(220, 190, 244);
+  border: 9px outset rgb(135, 146, 8);
+  border-radius: 13px;
+  box-shadow: 11px 11px 7px rgb(112, 184, 87);
+  padding: 10px;
+  color: rgb(99, 139, 248);
+}
+
 .grid-element {
   border: 3px solid #ddd;
   text-align: center;
