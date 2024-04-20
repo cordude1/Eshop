@@ -25,8 +25,12 @@
     <meta name="theme-color" content="#ffffff" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="resurse/favico/favico.svg"
+    />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
@@ -160,73 +164,68 @@
 
     <main style="min-height: 200vh">
       <div id="homepage">
-        <div id="homepage-grid">
-          <div class="grid-element" style="grid-column: span 4">
-            <div style="display: flex; font-size: 20px;text-align: left;">
-              <figure>
-                <img
-                  src="resurse/images/img1_big.jpg"
-                  class="imagine-fundal img-big"
-                />
-                <img
-                  src="resurse/images/img1_medium.jpg"
-                  class="imagine-fundal img-medium"
-                />
-                <img
-                  src="resurse/images/img1_small.jpg"
-                  class="imagine-fundal img-small"
-                />
-    
-                <figcaption>Fig.1 - Animalute fericite</figcaption>
-              </figure>
-              <div>
-                <section style="padding: 10px">
-                  <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
-                  <section style="text-align: justify">
-                    Bine ați venit la <em>Petshop.ro</em>, destinația dumneavoastră
-                    pentru toate nevoile animalelor de companie! Oferim
-                    <b
-                      >hrana uscată și umedă, conserve, granule, recompense,
-                      accesorii, suplimente, vitamine, șampoane, lese, botnițe,
-                      litiere și nisip</b
-                    >
-                    de cea mai bună calitate. Veniți și vă bucurați de o experiență
-                    plăcută de cumpărături pentru prietenii necuvântători ai
-                    familiei dumneavoastră la <strong>Pet Palace!</strong>
-                  </section>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+          "
+        >
+          <div class="cell" style="grid-column: span 4">
+            <img src="resurse/images/img1_big.jpg" id="main-image" />
+            <div>
+              <section style="padding: 10px">
+                <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
+                <section style="text-align: justify">
+                  Bine ați venit la <em>Petshop.ro</em>, destinația
+                  dumneavoastră pentru toate nevoile animalelor de companie!
+                  Oferim
+                  <b
+                    >hrana uscată și umedă, conserve, granule, recompense,
+                    accesorii, suplimente, vitamine, șampoane, lese, botnițe,
+                    litiere și nisip</b
+                  >
+                  de cea mai bună calitate. Veniți și vă bucurați de o
+                  experiență plăcută de cumpărături pentru prietenii
+                  necuvântători ai familiei dumneavoastră la
+                  <strong>Pet Palace!</strong>
                 </section>
-                <section style="padding: 10px">
-                  <h2 style="font-size: 30px; margin-bottom: 10px" id="alternative">
-                    Alternative
-                  </h2>
-                  <section>
-                    Incercati si
-                    <a href="https://petguru.ro/" target="_blank">Pet Guru!</a>
-                  </section>
+              </section>
+              <section style="padding: 10px">
+                <h2
+                  style="font-size: 30px; margin-bottom: 10px"
+                  id="alternative"
+                >
+                  Alternative
+                </h2>
+                <section>
+                  Incercati si
+                  <a href="https://petguru.ro/" target="_blank">Pet Guru!</a>
                 </section>
-                <section style="padding: 10px">
-                  <h2 style="font-size: 30px; margin-bottom: 10px" id="alternative">
-                    Descarca acum revista noastra!
-                  </h2>
-                  <section>
-                    Apasa
-                    <a href="resurse/revista.docx" download="revista_pet_shop"
-                      >aici</a
-                    >
-                    pentru a descarca revista noastra saptamanala cu oferte!
-                  </section>
+              </section>
+              <section style="padding: 10px">
+                <h2
+                  style="font-size: 30px; margin-bottom: 10px"
+                  id="alternative"
+                >
+                  Descarca acum revista noastra!
+                </h2>
+                <section>
+                  Apasa
+                  <a href="resurse/revista.docx" download="revista_pet_shop"
+                    >aici</a
+                  >
+                  pentru a descarca revista noastra saptamanala cu oferte!
                 </section>
-              </div>
-            </div></div>
-
-
-          <div class="grid-element" style="grid-column: span 4">
-            <div style="display: flex">
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  width: fit-content;">
+              </section>
+            </div>
+          </div>
+          <div
+            class="cell"
+            style="grid-column: span 4; justify-content: center"
+          >
+            <div style="display: flex; flex-grow: 1; max-width: 60%">
+              <div style="display: flex; flex-direction: column">
                 <div class="video-tab" id="tab-1" onclick="handleTabClick(1)">
                   video1
                 </div>
@@ -261,240 +260,132 @@
               </div>
             </div>
           </div>
-
-
-          <div class="grid-element">
-            <div style="display: font-size: 10px;text-align: center;overflow-x: auto;">
+          <div class="cell" style="flex-direction: column">
             <div class="calendar">
               <div class="month">
-                  <h1>Aprilie 2024</h1>
+                <h2 class="subtitlu">Aprilie 2024</h2>
               </div>
               <div class="days">
-                  <div class="day event">5<br>Eveniment 1</div>
-                  <div class="day event">15<br>Eveniment 2</div>
-                  <div class="day event">25<br>Eveniment 3</div>
+                <div class="day event">5<br />Eveniment 1</div>
+                <div class="day event">15<br />Eveniment 2</div>
+                <div class="day event">25<br />Eveniment 3</div>
               </div>
+              <svg
+                width="100%"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 9H21M7 3V5M17 3V5M6 12H8M11 12H13M16 12H18M6 15H8M11 15H13M16 15H18M6 18H8M11 18H13M16 18H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
+                  stroke="#000000"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-          <div class="grid-element" style="grid-column: span 2">
-            <div style="display: font-size: 1px;text-align: center;overflow-x: auto;">
-        
-            <h1 style="display: flex;font-size: medium;text-align: center;">Program de lucru</h1>
+          <div class="cell" style="grid-column: span 2; flex-direction: column">
+            <h2 class="subtitlu">Program de lucru</h2>
             <table>
               <thead>
-                  <tr>
-                      <th>Zi</th>
-                      <th>Ora</th>
-                  </tr>
+                <tr>
+                  <th>Zi</th>
+                  <th>Ora</th>
+                </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>Luni</td>
-                      <td>09:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                      <td>Marți</td>
-                      <td>09:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                      <td>Miercuri</td>
-                      <td>09:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                      <td>Joi</td>
-                      <td>09:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                      <td>Vineri</td>
-                      <td>09:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                      <td>Sâmbătă</td>
-                      <td>Închis</td>
-                  </tr>
-                  <tr>
-                      <td>Duminică</td>
-                      <td>Închis</td>
-                  </tr>
+                <tr>
+                  <td>Luni</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Marți</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Miercuri</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Joi</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Vineri</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Sâmbătă</td>
+                  <td>Închis</td>
+                </tr>
+                <tr>
+                  <td>Duminică</td>
+                  <td>Închis</td>
+                </tr>
               </tbody>
-          </table>
-          
+            </table>
+          </div>
+          <div class="cell" style="flex-direction: column; max-height: 400px">
+            <h2 class="subtitlu">Anunturi</h2>
+            <ul style="overflow-y: scroll">
+              <li>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+              </li>
+              <hr />
+              <li>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+              </li>
+              <hr />
+              <li>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+              </li>
+              <hr />
+              <li>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+              </li>
+            </ul>
+          </div>
+          <div class="cell" style="flex-direction: column">
+            <h2 class="subtitlu">Chat online</h2>
+
+            <ul>
+              <li>Asistent online 1</li>
+              <li>Asistent online 2</li>
+              <li>Asistent online 3</li>
+            </ul>
+          </div>
+          <div class="cell">
+            <h2 class="subtitlu" style="display: flex; align-items: center">
+              <span id="users"></span>&nbsp;
+              <span style="white-space: no-wrap">Utilizatori Online</span>
+              <span
+                style="
+                  font-size: 48px;
+                  margin-left: 10px;
+                  color: rgb(38, 203, 38);
+                "
+                >&bull;</span
+              >
+            </h2>
+          </div>
+          <div class="cell" style="grid-column: span 2; flex-direction: column">
+            <h2 class="subtitlu">Date Site & Server</h2>
+            <div id="date-site"></div>
           </div>
         </div>
-      </div>
-
-          <div class="grid-element">
-            <div class="Anunturi">
-              <h2>Anunțuri</h2>
-              <p>5 ianuarie 2022 - Produsele X sunt din nou in stoc!!!!
-                 5 iulie 2021 - Am adăugat produse pentru hamster in lista noastra de produse.
-              </p>
-          </div>
-          </div>
-          
-          <div class="grid-element">5</div>
-          <div class="grid-element">statistici</div>
-          <div class="grid-element" style="grid-column: span 2">7</div>
-        </div>
-        <!-- <div style="display: flex">
-          <figure>
-            <img
-              src="resurse/images/img1_big.jpg"
-              class="imagine-fundal img-big"
-            />
-            <img
-              src="resurse/images/img1_medium.jpg"
-              class="imagine-fundal img-medium"
-            />
-            <img
-              src="resurse/images/img1_small.jpg"
-              class="imagine-fundal img-small"
-            />
-
-            <figcaption>Fig.1 - Animalute fericite</figcaption>
-          </figure>
-          <div>
-            <section style="padding: 10px">
-              <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
-              <section style="text-align: justify">
-                Bine ați venit la <em>Petshop.ro</em>, destinația dumneavoastră
-                pentru toate nevoile animalelor de companie! Oferim
-                <b
-                  >hrana uscată și umedă, conserve, granule, recompense,
-                  accesorii, suplimente, vitamine, șampoane, lese, botnițe,
-                  litiere și nisip</b
-                >
-                de cea mai bună calitate. Veniți și vă bucurați de o experiență
-                plăcută de cumpărături pentru prietenii necuvântători ai
-                familiei dumneavoastră la <strong>Pet Palace!</strong>
-              </section>
-            </section>
-            <section style="padding: 10px">
-              <h2 style="font-size: 30px; margin-bottom: 10px" id="alternative">
-                Alternative
-              </h2>
-              <section>
-                Incercati si
-                <a href="https://petguru.ro/" target="_blank">Pet Guru!</a>
-              </section>
-            </section>
-            <section style="padding: 10px">
-              <h2 style="font-size: 30px; margin-bottom: 10px" id="alternative">
-                Descarca acum revista noastra!
-              </h2>
-              <section>
-                Apasa
-                <a href="resurse/revista.docx" download="revista_pet_shop"
-                  >aici</a
-                >
-                pentru a descarca revista noastra saptamanala cu oferte!
-              </section>
-            </section>
-          </div>
-        </div>
-
-    
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px">La noi găsești cel mai bun preț</h3>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px">Prinde oferta zilei</h3>
-        </section>
-        <mn style="margin-left: 20px">95</mn>
-        <mo>%</mo>
-        <mtext style="margin-bottom: 10px">
-          dintre utilizatorii noștri sunt mulțumiți de produsele noastre.</mtext
-        >
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b>Hrană uscată câini</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b>Hrană uscată pisici</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b> Hrană uscată păsări</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b> Hrană uscată pești</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b>Hrană uscată iepuri</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section>
-        <section style="margin-bottom: 10px">
-          <h3 style="margin-left: 20px"><b>Hrană uscată hamsteri</b></h3>
-          <div>
-            <p>
-              La Pershop.ro vei descoperi o varietate de hrană uscată pentru
-              câini, potrivită pentru toate rasele, vârstele. În magazinul
-              nostru online, te așteaptă mărci de calitate superioară precum
-              Royal Canin, Hills, Pro Plan, Eukanuba și multe altele, toate la
-              prețuri competitive. Pe lângă selecția noastră de hrană uscată,
-              îți recomandăm să încerci și hrana umedă pentru a diversifica
-              dieta și pentru a asigura hidratarea corespunzătoare a câinelui
-              tău.
-            </p>
-          </div>
-        </section> -->
       </div>
       <div id="recomandari">
         <img src="resurse/Recomandari/Recomandari -3.jpg" />
@@ -572,15 +463,14 @@
           document.getElementById("tab-1").style.backgroundColor = "yellow";
           document.getElementById("tab-2").style.backgroundColor = "plum";
           //show video 1
-          document.getElementById("video1").style.display="block";
-          document.getElementById("video2").style.display="none";
-
+          document.getElementById("video1").style.display = "block";
+          document.getElementById("video2").style.display = "none";
         } else if (selected_tab == 2) {
           document.getElementById("tab-1").style.backgroundColor = "plum";
           document.getElementById("tab-2").style.backgroundColor = "yellow";
           //show video 2
-          document.getElementById("video2").style.display="block";
-          document.getElementById("video1").style.display="none";
+          document.getElementById("video2").style.display = "block";
+          document.getElementById("video1").style.display = "none";
         }
       }
 
@@ -632,6 +522,30 @@
         handleTabs();
       }
 
+      function generateUsers() {
+        var randomNumber = Math.floor(Math.random() * 20);
+        document.getElementById("users").innerHTML = randomNumber;
+      }
+
+      function getSiteData() {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var site_url = window.location.href;
+        document.getElementById("date-site").innerHTML =
+          "latime:" +
+          width +
+          "px" +
+          "\n" +
+          "inaltime:" +
+          height +
+          "px" +
+          "\n" +
+          "URL:" +
+          site_url;
+      }
+
+      getSiteData();
+      generateUsers();
       handleTabs();
     </script>
   </body>
