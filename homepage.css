@@ -5,6 +5,18 @@
   margin: 20px;
 }
 
+.cell {
+  box-shadow: 1px 1px 10px rgb(150, 179, 215);
+  padding: 20px;
+  display: flex;
+}
+
+.subtitlu {
+  font-size: x-large;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .my-card {
   background-color: rgb(220, 190, 244);
   border: 9px outset rgb(135, 146, 8);
@@ -19,6 +31,25 @@
   text-align: center;
   font-size: 4em;
   transition: 0.5s;
+}
+
+#users {
+  animation: pulse 1.5s infinite;
+  width:30px;
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 20px;
+  }
+
+  50% {
+    font-size: 30px;
+  }
+
+  100% {
+    font-size: 20px;
+  }
 }
 
 #video1 {
@@ -45,4 +76,8 @@
   .grid-element {
     font-size: 1em;
   }
+}
+
+#main-image {
+  width: 40%;
 }
