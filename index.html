@@ -161,10 +161,74 @@
     <main style="min-height: 200vh">
       <div id="homepage">
         <div id="homepage-grid">
-          <div class="grid-element" style="grid-column: span 4">1</div>
-          <div class="grid-element" style="grid-column: span 4">8</div>
-          <div class="grid-element">3</div>
-          <div class="grid-element" style="grid-column: span 2">
+          <div class="grid-element" style="grid-column: span 4">
+            <div style="display: flex; font-size: 20px; text-align: left">
+              <figure>
+                <img
+                  src="resurse/images/img1_big.jpg"
+                  class="imagine-fundal img-big"
+                />
+                <img
+                  src="resurse/images/img1_medium.jpg"
+                  class="imagine-fundal img-medium"
+                />
+                <img
+                  src="resurse/images/img1_small.jpg"
+                  class="imagine-fundal img-small"
+                />
+
+                <figcaption>Fig.1 - Animalute fericite</figcaption>
+              </figure>
+              <div>
+                <section style="padding: 10px">
+                  <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
+                  <section style="text-align: justify">
+                    Bine ați venit la <em>Petshop.ro</em>, destinația
+                    dumneavoastră pentru toate nevoile animalelor de companie!
+                    Oferim
+                    <b
+                      >hrana uscată și umedă, conserve, granule, recompense,
+                      accesorii, suplimente, vitamine, șampoane, lese, botnițe,
+                      litiere și nisip</b
+                    >
+                    de cea mai bună calitate. Veniți și vă bucurați de o
+                    experiență plăcută de cumpărături pentru prietenii
+                    necuvântători ai familiei dumneavoastră la
+                    <strong>Pet Palace!</strong>
+                  </section>
+                </section>
+                <section style="padding: 10px">
+                  <h2
+                    style="font-size: 30px; margin-bottom: 10px"
+                    id="alternative"
+                  >
+                    Alternative
+                  </h2>
+                  <section>
+                    Incercati si
+                    <a href="https://petguru.ro/" target="_blank">Pet Guru!</a>
+                  </section>
+                </section>
+                <section style="padding: 10px">
+                  <h2
+                    style="font-size: 30px; margin-bottom: 10px"
+                    id="alternative"
+                  >
+                    Descarca acum revista noastra!
+                  </h2>
+                  <section>
+                    Apasa
+                    <a href="resurse/revista.docx" download="revista_pet_shop"
+                      >aici</a
+                    >
+                    pentru a descarca revista noastra saptamanala cu oferte!
+                  </section>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-element" style="grid-column: span 4">
             <div style="display: flex">
               <div
                 style="
@@ -207,11 +271,84 @@
               </div>
             </div>
           </div>
-          <div class="grid-element">
 
-            <div class="my-card">text1</div>
-            <div class="my-card">text2</div>
+          <div class="grid-element">
+            <div
+              style="display: font-size: 10px;text-align: center;overflow-x: auto;"
+            >
+              <div class="calendar">
+                <div class="month">
+                  <h1>Aprilie 2024</h1>
+                </div>
+                <div class="days">
+                  <div class="day event">5<br />Eveniment 1</div>
+                  <div class="day event">15<br />Eveniment 2</div>
+                  <div class="day event">25<br />Eveniment 3</div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-element" style="grid-column: span 2">
+              <div
+                style="display: font-size: 1px;text-align: center;overflow-x: auto;"
+              >
+                <h1
+                  style="display: flex; font-size: medium; text-align: center"
+                >
+                  Program de lucru
+                </h1>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Zi</th>
+                      <th>Ora</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Luni</td>
+                      <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Marți</td>
+                      <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Miercuri</td>
+                      <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Joi</td>
+                      <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Vineri</td>
+                      <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Sâmbătă</td>
+                      <td>Închis</td>
+                    </tr>
+                    <tr>
+                      <td>Duminică</td>
+                      <td>Închis</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
+
+          <div class="grid-element">
+            <div class="Anunturi">
+              <h2>Anunțuri</h2>
+              <p>
+                5 ianuarie 2022 - Produsele X sunt din nou in stoc!!!! 5 iulie
+                2021 - Am adăugat produse pentru hamster in lista noastra de
+                produse.
+              </p>
+            </div>
+          </div>
+
           <div class="grid-element">5</div>
           <div class="grid-element">statistici</div>
           <div class="grid-element" style="grid-column: span 2">7</div>
@@ -452,15 +589,14 @@
           document.getElementById("tab-1").style.backgroundColor = "yellow";
           document.getElementById("tab-2").style.backgroundColor = "plum";
           //show video 1
-          document.getElementById("video1").style.display="block";
-          document.getElementById("video2").style.display="none";
-
+          document.getElementById("video1").style.display = "block";
+          document.getElementById("video2").style.display = "none";
         } else if (selected_tab == 2) {
           document.getElementById("tab-1").style.backgroundColor = "plum";
           document.getElementById("tab-2").style.backgroundColor = "yellow";
           //show video 2
-          document.getElementById("video2").style.display="block";
-          document.getElementById("video1").style.display="none";
+          document.getElementById("video2").style.display = "block";
+          document.getElementById("video1").style.display = "none";
         }
       }
 
