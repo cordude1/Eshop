@@ -1,14 +1,115 @@
+:root {
+  --mobile-spacing: 5px;
+  --desktop-spacing: 22px;
+
+  --primary: #43cbff;
+  --secondary: #b3b3f4;
+  --lightblue: #00e2ff;
+  --turcoise: #00f0c8;
+  --green: #61f363;
+}
+
+#program {
+  border-spacing: 4px;
+}
+
 #homepage-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 25px;
-  margin: 20px;
+  gap: 20px;
+}
+
+.cell1 {
+  grid-column: span 4;
+}
+.cell2 {
+  grid-column: span 4;
+}
+.cell3 {
+  grid-column: span 1;
+}
+.cell4 {
+  grid-column: span 2;
+}
+.cell5 {
+  grid-column: span 1;
+}
+.cell6 {
+  grid-column: span 1;
+}
+.cell7 {
+  grid-column: span 1;
+}
+.cell8 {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  #homepage-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cell {
+    transition: 0.2s all ease-in-out;
+  }
+  .cell1,
+  .cell2,
+  .cell3,
+  .cell4,
+  .cell5,
+  .cell6,
+  .cell7,
+  .cell8 {
+    grid-column: span 1;
+    font-size: 0.85rem;
+  }
+}
+
+tr:hover {
+  background-color: coral;
+}
+
+.purple {
+  background-color: var(--secondary);
+}
+.blue {
+  background-color: var(--lightblue);
+}
+
+/*for mobile*/
+@media screen and (max-width: 767px) {
+  #homepage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #program {
+    border-spacing: 0px;
+  }
+
+  .cell1,
+  .cell2,
+  .cell3,
+  .cell4,
+  .cell5,
+  .cell6,
+  .cell7,
+  .cell8 {
+    transition: 0s;
+    grid-column: span 1;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .nav-link {
+    display: none;
+  }
 }
 
 .cell {
   box-shadow: 1px 1px 10px rgb(150, 179, 215);
   padding: 20px;
   display: flex;
+  background-color: white;
 }
 
 .subtitlu {
@@ -35,7 +136,7 @@
 
 #users {
   animation: pulse 1.5s infinite;
-  width:30px;
+  width: 30px;
 }
 
 @keyframes pulse {
@@ -62,14 +163,25 @@
 
 .video-tab {
   font-size: 25px;
-  background-color: plum;
-  color: rgb(52, 17, 85);
-  border: 4px solid rgb(52, 17, 85);
+  background-color: #dee0ff;
+  color: #6d6bae;
+  border: 4px solid #6d6bae;
   padding: 20px;
   margin-bottom: 2px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   cursor: pointer;
+  box-shadow: inset 8px 3px 4px #6d6bae;
+  transition: 0.3s all;
+}
+
+.pink {
+  background-color: var(-);
+}
+
+.video-tab:hover {
+  color: #dee0ff;
+  background-color: #6d6bae;
 }
 
 @media screen and (width<1000px) {
@@ -79,5 +191,6 @@
 }
 
 #main-image {
-  width: 40%;
+  width: 400px;
+  height: 250px;
 }

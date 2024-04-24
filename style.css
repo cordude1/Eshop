@@ -183,10 +183,7 @@ td {
   border-collapse: collapse;
   font-size: small;
 }
-.table,
-tr:hover {
-  background-color: rgb(81, 203, 222);
-}
+
 .calendar {
   max-width: 400px;
   margin: 0 auto;

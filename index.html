@@ -41,7 +41,6 @@
     <!--scripts-->
   </head>
   <body style="overflow-x: hidden">
-    <div id="navbar"></div>
     <header id="top-header">
       <nav>
         <ul
@@ -60,7 +59,7 @@
               <h1 id="header-logo" onclick="openHomepage()">PETSHOP.RO</h1>
             </div>
           </li>
-          <li onmouseover="openMenu(1)">
+          <li onmouseover="openMenu(1)" class="nav-link">
             <a href="index.html" style="text-decoration: none; color: black">
               Hrană</a
             >
@@ -82,7 +81,7 @@
               </ul>
             </div>
           </li>
-          <li onmouseover="openMenu(2)">
+          <li onmouseover="openMenu(2)" class="nav-link">
             <a href="/accesorii" style="text-decoration: none; color: black">
               Accesorii</a
             >
@@ -112,7 +111,7 @@
               </ul>
             </div>
           </li>
-          <li onmouseover="openMenu(3)">
+          <li onmouseover="openMenu(3)" class="nav-link">
             <a
               href="/Igienă și îngrijire"
               style="text-decoration: none; color: black"
@@ -136,7 +135,7 @@
               </ul>
             </div>
           </li>
-          <li onmouseover="openMenu(4)">
+          <li onmouseover="openMenu(4)" class="nav-link">
             <a href="/Promoții" style="text-decoration: none; color: black">
               Promoții</a
             >
@@ -154,8 +153,11 @@
               </ul>
             </div>
           </li>
-
-          <li onclick="openRecomandari()" style="cursor: pointer">
+          <li
+            onclick="openRecomandari()"
+            style="cursor: pointer"
+            class="nav-link"
+          >
             Recomandările noastre
           </li>
         </ul>
@@ -164,16 +166,10 @@
 
     <main style="min-height: 200vh">
       <div id="homepage">
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 20px;
-          "
-        >
-          <div class="cell" style="grid-column: span 4">
+        <div id="homepage-grid">
+          <div class="cell cell1" style="flex-wrap: wrap">
             <img src="resurse/images/img1_big.jpg" id="main-image" />
-            <div>
+            <div style="max-width: 500px">
               <section style="padding: 10px">
                 <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
                 <section style="text-align: justify">
@@ -220,10 +216,7 @@
               </section>
             </div>
           </div>
-          <div
-            class="cell"
-            style="grid-column: span 4; justify-content: center"
-          >
+          <div class="cell cell2" style="justify-content: center">
             <div style="display: flex; flex-grow: 1; max-width: 60%">
               <div style="display: flex; flex-direction: column">
                 <div class="video-tab" id="tab-1" onclick="handleTabClick(1)">
@@ -233,7 +226,7 @@
                   video2
                 </div>
               </div>
-              <div style="border: 8px solid purple; width: 100%">
+              <div style="border: 8px solid #6d6bae; width: 100%">
                 <iframe
                   id="video1"
                   width="100%"
@@ -260,7 +253,7 @@
               </div>
             </div>
           </div>
-          <div class="cell" style="flex-direction: column">
+          <div class="cell cell3" style="flex-direction: column">
             <div class="calendar">
               <div class="month">
                 <h2 class="subtitlu">Aprilie 2024</h2>
@@ -285,48 +278,78 @@
               </svg>
             </div>
           </div>
-          <div class="cell" style="grid-column: span 2; flex-direction: column">
+          <div
+            class="cell cell4"
+            style="flex-direction: column; overflow-x: scroll;min-height: 550px;"
+          >
             <h2 class="subtitlu">Program de lucru</h2>
-            <table>
+            <table style="position: relative; min-width: 400px" id="program">
               <thead>
-                <tr>
+                <tr style="background-color: white">
                   <th>Zi</th>
                   <th>Ora</th>
+                  <th>Pets</th>
+                  <th>Discount%</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="purple">
                   <td>Luni</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Marți</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Miercuri</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Joi</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Vineri</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>35%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Sâmbătă</td>
                   <td>Închis</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Duminică</td>
                   <td>Închis</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">In limita stocului disponibil</td>
+                </tr>
+              </tfoot>
+              <caption style="position: absolute; bottom: -19px; left: 45%">
+                Tabel 1.1
+              </caption>
             </table>
           </div>
-          <div class="cell" style="flex-direction: column; max-height: 400px">
+          <div
+            class="cell cell5"
+            style="flex-direction: column; max-height: 400px"
+          >
             <h2 class="subtitlu">Anunturi</h2>
             <ul style="overflow-y: scroll">
               <li>
@@ -358,7 +381,7 @@
               </li>
             </ul>
           </div>
-          <div class="cell" style="flex-direction: column">
+          <div class="cell cell6" style="flex-direction: column">
             <h2 class="subtitlu">Chat online</h2>
 
             <ul>
@@ -367,7 +390,7 @@
               <li>Asistent online 3</li>
             </ul>
           </div>
-          <div class="cell">
+          <div class="cell cell7">
             <h2 class="subtitlu" style="display: flex; align-items: center">
               <span id="users"></span>&nbsp;
               <span style="white-space: no-wrap">Utilizatori Online</span>
@@ -381,7 +404,7 @@
               >
             </h2>
           </div>
-          <div class="cell" style="grid-column: span 2; flex-direction: column">
+          <div class="cell cell8" style="flex-direction: column">
             <h2 class="subtitlu">Date Site & Server</h2>
             <div id="date-site"></div>
           </div>
@@ -460,14 +483,10 @@
 
       function handleTabs() {
         if (selected_tab == 1) {
-          document.getElementById("tab-1").style.backgroundColor = "yellow";
-          document.getElementById("tab-2").style.backgroundColor = "plum";
           //show video 1
           document.getElementById("video1").style.display = "block";
           document.getElementById("video2").style.display = "none";
         } else if (selected_tab == 2) {
-          document.getElementById("tab-1").style.backgroundColor = "plum";
-          document.getElementById("tab-2").style.backgroundColor = "yellow";
           //show video 2
           document.getElementById("video2").style.display = "block";
           document.getElementById("video1").style.display = "none";
