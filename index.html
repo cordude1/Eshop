@@ -37,143 +37,76 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="homepage/style.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
     <!--scripts-->
   </head>
   <body style="overflow-x: hidden">
-    <div id="navbar"></div>
-    <header id="top-header">
-      <nav>
-        <ul
-          style="font-size: 22px; display: flex; align-items: center"
-          id="meniu"
-        >
-          <li
-            style="
-              font-size: 30px;
-              font-weight: bold;
-              color: rgb(72, 72, 197);
-              cursor: pointer;
-            "
-          >
-            <div style="color: rgb(72, 72, 197); text-decoration: none">
-              <h1 id="header-logo" onclick="openHomepage()">PETSHOP.RO</h1>
-            </div>
-          </li>
-          <li onmouseover="openMenu(1)">
-            <a href="index.html" style="text-decoration: none; color: black">
-              Hrană</a
-            >
-            <div class="sub-menu" id="menu-1" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li
-                  style="white-space: nowrap"
-                  class="sub-menu-item"
-                  onclick="openHranaCaini()"
-                >
-                  Hrană câini
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Hrană pisici
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Hrană pentru alte animale
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li onmouseover="openMenu(2)">
-            <a href="/accesorii" style="text-decoration: none; color: black">
-              Accesorii</a
-            >
-            <div class="sub-menu" id="menu-2" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Snackuri și recompense
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Cuști și accesorii de transport
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Paturi și saltele
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Boluri si recipiente hrană
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Jucării
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Suplimente și Vitamine
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Alte accesorii
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li onmouseover="openMenu(3)">
-            <a
-              href="/Igienă și îngrijire"
-              style="text-decoration: none; color: black"
-            >
-              Igienă și îngrijire</a
-            >
-            <div class="sub-menu" id="menu-3" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Produse de îngrijire
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Produse de deparazitare internă și externă
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Clești si trimmere
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Alte produse de igienă și îngrijire
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li onmouseover="openMenu(4)">
-            <a href="/Promoții" style="text-decoration: none; color: black">
-              Promoții</a
-            >
-            <div class="sub-menu" id="menu-4" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Oferte zilnice
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  1+1 Gratis
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Lichidare de Stoc
-                </li>
-              </ul>
-            </div>
-          </li>
+    <!--FIXED ELEMENTS-->
+    <div
+      style="
+        display: flex;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        flex-grow: 1;
+        opacity: 0.6;
+        justify-content: flex-end;
+        align-items: center;
+      "
+      title="Inapoi sus!"
+    >
+      <a href="#top-header" style="text-decoration: none"
+        ><div id="to-top-button">
+          <div id="to-top-arrow">&#129081;</div>
+        </div></a
+      >
+    </div>
 
-          <li onclick="openRecomandari()" style="cursor: pointer">
-            Recomandările noastre
+    <header>
+      <div id="menu-mobile" style="border: 2px solid red; display: none">
+        MENU
+      </div>
+      <div id="hamburger" onclick="clickHamburger()">
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Products</a>
+            <ul class="submenu">
+              <li><a href="#">Product 1</a></li>
+              <li><a href="#">Product 2</a></li>
+              <li><a href="#">Product 3</a></li>
+            </ul>
           </li>
+          <li>
+            <a href="#">Services</a>
+            <ul class="submenu">
+              <li><a href="#">Service 1</a></li>
+              <li><a href="#">Service 2</a></li>
+              <li><a href="#">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main style="min-height: 200vh">
       <div id="homepage">
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 20px;
-          "
-        >
-          <div class="cell" style="grid-column: span 4">
-            <img src="resurse/images/img1_big.jpg" id="main-image" />
-            <div>
+        <div id="homepage-grid">
+          <div class="cell cell1" style="flex-direction: column">
+            <div src="resurse/images/img1_big.jpg" id="main-image">
+              <div id="main-image-banner">
+                <button>Shop Now!</button>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px">
               <section style="padding: 10px">
                 <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
                 <section style="text-align: justify">
@@ -220,10 +153,7 @@
               </section>
             </div>
           </div>
-          <div
-            class="cell"
-            style="grid-column: span 4; justify-content: center"
-          >
+          <div class="cell cell2" style="justify-content: center">
             <div style="display: flex; flex-grow: 1; max-width: 60%">
               <div style="display: flex; flex-direction: column">
                 <div class="video-tab" id="tab-1" onclick="handleTabClick(1)">
@@ -233,7 +163,7 @@
                   video2
                 </div>
               </div>
-              <div style="border: 8px solid purple; width: 100%">
+              <div style="border: 8px solid #6d6bae; width: 100%">
                 <iframe
                   id="video1"
                   width="100%"
@@ -260,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div class="cell" style="flex-direction: column">
+          <div class="cell cell3" style="flex-direction: column">
             <div class="calendar">
               <div class="month">
                 <h2 class="subtitlu">Aprilie 2024</h2>
@@ -285,48 +215,82 @@
               </svg>
             </div>
           </div>
-          <div class="cell" style="grid-column: span 2; flex-direction: column">
+          <div
+            class="cell cell4"
+            style="
+              flex-direction: column;
+              overflow-x: scroll;
+              min-height: 550px;
+            "
+          >
             <h2 class="subtitlu">Program de lucru</h2>
-            <table>
+            <table style="position: relative; min-width: 400px" id="program">
               <thead>
-                <tr>
+                <tr style="background-color: white">
                   <th>Zi</th>
                   <th>Ora</th>
+                  <th>Pets</th>
+                  <th>Discount%</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="purple">
                   <td>Luni</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Marți</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Miercuri</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Joi</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Vineri</td>
                   <td>09:00 - 18:00</td>
+                  <td>Pamela</td>
+                  <td>35%</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Sâmbătă</td>
                   <td>Închis</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
-                <tr>
+                <tr class="purple">
                   <td>Duminică</td>
                   <td>Închis</td>
+                  <td>Pamela</td>
+                  <td>15%</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">In limita stocului disponibil</td>
+                </tr>
+              </tfoot>
+              <caption style="position: absolute; bottom: -19px; left: 45%">
+                Tabel 1.1
+              </caption>
             </table>
           </div>
-          <div class="cell" style="flex-direction: column; max-height: 400px">
+          <div
+            class="cell cell5"
+            style="flex-direction: column; max-height: 400px"
+          >
             <h2 class="subtitlu">Anunturi</h2>
             <ul style="overflow-y: scroll">
               <li>
@@ -358,7 +322,7 @@
               </li>
             </ul>
           </div>
-          <div class="cell" style="flex-direction: column">
+          <div class="cell cell6" style="flex-direction: column">
             <h2 class="subtitlu">Chat online</h2>
 
             <ul>
@@ -367,7 +331,7 @@
               <li>Asistent online 3</li>
             </ul>
           </div>
-          <div class="cell">
+          <div class="cell cell7">
             <h2 class="subtitlu" style="display: flex; align-items: center">
               <span id="users"></span>&nbsp;
               <span style="white-space: no-wrap">Utilizatori Online</span>
@@ -381,7 +345,7 @@
               >
             </h2>
           </div>
-          <div class="cell" style="grid-column: span 2; flex-direction: column">
+          <div class="cell cell8" style="flex-direction: column">
             <h2 class="subtitlu">Date Site & Server</h2>
             <div id="date-site"></div>
           </div>
@@ -425,16 +389,6 @@
             >
           </li>
         </ul>
-        <div
-          style="
-            display: flex;
-            flex-grow: 1;
-            justify-content: flex-end;
-            align-items: center;
-          "
-        >
-          <a href="#top-header"><div id="to-top-button">&#8687;</div></a>
-        </div>
       </div>
       <div
         id="div1"
@@ -460,14 +414,10 @@
 
       function handleTabs() {
         if (selected_tab == 1) {
-          document.getElementById("tab-1").style.backgroundColor = "yellow";
-          document.getElementById("tab-2").style.backgroundColor = "plum";
           //show video 1
           document.getElementById("video1").style.display = "block";
           document.getElementById("video2").style.display = "none";
         } else if (selected_tab == 2) {
-          document.getElementById("tab-1").style.backgroundColor = "plum";
-          document.getElementById("tab-2").style.backgroundColor = "yellow";
           //show video 2
           document.getElementById("video2").style.display = "block";
           document.getElementById("video1").style.display = "none";
@@ -542,6 +492,10 @@
           "\n" +
           "URL:" +
           site_url;
+      }
+
+      function clickHamburger() {
+        document.getElementById("menu-mobile").style.display = "block";
       }
 
       getSiteData();
