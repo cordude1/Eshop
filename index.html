@@ -37,129 +37,62 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="homepage/style.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
     <!--scripts-->
   </head>
   <body style="overflow-x: hidden">
-    <header id="top-header">
-      <nav>
-        <ul
-          style="font-size: 22px; display: flex; align-items: center"
-          id="meniu"
-        >
-          <li
-            style="
-              font-size: 30px;
-              font-weight: bold;
-              color: rgb(72, 72, 197);
-              cursor: pointer;
-            "
-          >
-            <div style="color: rgb(72, 72, 197); text-decoration: none">
-              <h1 id="header-logo" onclick="openHomepage()">PETSHOP.RO</h1>
-            </div>
+    <!--FIXED ELEMENTS-->
+    <div
+      style="
+        display: flex;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        flex-grow: 1;
+        opacity: 0.6;
+        justify-content: flex-end;
+        align-items: center;
+      "
+      title="Inapoi sus!"
+    >
+      <a href="#top-header" style="text-decoration: none"
+        ><div id="to-top-button">
+          <div id="to-top-arrow">&#129081;</div>
+        </div></a
+      >
+    </div>
+
+    <header>
+      <div id="menu-mobile" style="border: 2px solid red; display: none">
+        MENU
+      </div>
+      <div id="hamburger" onclick="clickHamburger()">
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Products</a>
+            <ul class="submenu">
+              <li><a href="#">Product 1</a></li>
+              <li><a href="#">Product 2</a></li>
+              <li><a href="#">Product 3</a></li>
+            </ul>
           </li>
-          <li onmouseover="openMenu(1)" class="nav-link">
-            <a href="index.html" style="text-decoration: none; color: black">
-              Hrană</a
-            >
-            <div class="sub-menu" id="menu-1" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li
-                  style="white-space: nowrap"
-                  class="sub-menu-item"
-                  onclick="openHranaCaini()"
-                >
-                  Hrană câini
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Hrană pisici
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Hrană pentru alte animale
-                </li>
-              </ul>
-            </div>
+          <li>
+            <a href="#">Services</a>
+            <ul class="submenu">
+              <li><a href="#">Service 1</a></li>
+              <li><a href="#">Service 2</a></li>
+              <li><a href="#">Service 3</a></li>
+            </ul>
           </li>
-          <li onmouseover="openMenu(2)" class="nav-link">
-            <a href="/accesorii" style="text-decoration: none; color: black">
-              Accesorii</a
-            >
-            <div class="sub-menu" id="menu-2" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Snackuri și recompense
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Cuști și accesorii de transport
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Paturi și saltele
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Boluri si recipiente hrană
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Jucării
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Suplimente și Vitamine
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Alte accesorii
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li onmouseover="openMenu(3)" class="nav-link">
-            <a
-              href="/Igienă și îngrijire"
-              style="text-decoration: none; color: black"
-            >
-              Igienă și îngrijire</a
-            >
-            <div class="sub-menu" id="menu-3" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Produse de îngrijire
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Produse de deparazitare internă și externă
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Clești si trimmere
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Alte produse de igienă și îngrijire
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li onmouseover="openMenu(4)" class="nav-link">
-            <a href="/Promoții" style="text-decoration: none; color: black">
-              Promoții</a
-            >
-            <div class="sub-menu" id="menu-4" onmouseleave="closeMenu()">
-              <ul style="padding: 10px">
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Oferte zilnice
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  1+1 Gratis
-                </li>
-                <li style="white-space: nowrap" class="sub-menu-item">
-                  Lichidare de Stoc
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li
-            onclick="openRecomandari()"
-            style="cursor: pointer"
-            class="nav-link"
-          >
-            Recomandările noastre
-          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -167,9 +100,13 @@
     <main style="min-height: 200vh">
       <div id="homepage">
         <div id="homepage-grid">
-          <div class="cell cell1" style="flex-wrap: wrap">
-            <img src="resurse/images/img1_big.jpg" id="main-image" />
-            <div style="max-width: 500px">
+          <div class="cell cell1" style="flex-direction: column">
+            <div src="resurse/images/img1_big.jpg" id="main-image">
+              <div id="main-image-banner">
+                <button>Shop Now!</button>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px">
               <section style="padding: 10px">
                 <h2 style="font-size: 30px; margin-bottom: 10px">Despre</h2>
                 <section style="text-align: justify">
@@ -280,7 +217,11 @@
           </div>
           <div
             class="cell cell4"
-            style="flex-direction: column; overflow-x: scroll;min-height: 550px;"
+            style="
+              flex-direction: column;
+              overflow-x: scroll;
+              min-height: 550px;
+            "
           >
             <h2 class="subtitlu">Program de lucru</h2>
             <table style="position: relative; min-width: 400px" id="program">
@@ -448,16 +389,6 @@
             >
           </li>
         </ul>
-        <div
-          style="
-            display: flex;
-            flex-grow: 1;
-            justify-content: flex-end;
-            align-items: center;
-          "
-        >
-          <a href="#top-header"><div id="to-top-button">&#8687;</div></a>
-        </div>
       </div>
       <div
         id="div1"
@@ -561,6 +492,10 @@
           "\n" +
           "URL:" +
           site_url;
+      }
+
+      function clickHamburger() {
+        document.getElementById("menu-mobile").style.display = "block";
       }
 
       getSiteData();

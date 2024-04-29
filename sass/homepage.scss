@@ -1,0 +1,90 @@
+/* Regular menu styles */
+.menu {
+  position: relative;
+  z-index: 999;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  position: relative;
+}
+
+.menu ul li:hover .submenu {
+  height: 180px;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Submenu styles */
+.submenu {
+  transition: 0.2s all ease-in-out;
+  overflow: hidden;
+  height: 0px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.submenu li {
+  display: block;
+}
+
+.submenu li a {
+  padding: 8px 15px;
+}
+
+.submenu li a:hover {
+  background-color: #f4f4f4;
+}
+
+/* Hamburger menu styles */
+#hamburger {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger .slice {
+  width: 30px;
+  height: 3px;
+  margin-top: 5px;
+  border-radius: 2px;
+  padding: 2px;
+  background-color: black;
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  .submenu {
+    position: static;
+    height: auto;
+    border: none;
+  }
+}
+
+/* Styles for showing the submenu */
+.show-submenu .submenu {
+  height: 180px;
+}
