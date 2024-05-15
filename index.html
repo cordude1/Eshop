@@ -43,19 +43,9 @@
   </head>
   <body style="overflow-x: hidden">
     <!--FIXED ELEMENTS-->
-    <div
-      style="
-        display: flex;
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        flex-grow: 1;
-        opacity: 0.6;
-        justify-content: flex-end;
-        align-items: center;
-      "
-      title="Inapoi sus!"
-    >
+    <div id="watermark">Ariela</div>
+
+    <div id="to-top-button-container" title="Inapoi sus!">
       <a href="#top-header" style="text-decoration: none"
         ><div id="to-top-button">
           <div id="to-top-arrow">&#129081;</div>
@@ -63,7 +53,7 @@
       >
     </div>
 
-    <header>
+    <header id="top-header">
       <div id="menu-mobile" style="border: 2px solid red; display: none">
         MENU
       </div>
@@ -74,7 +64,9 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li onclick="openHomepage()">
+            <a href="#"><h1>Petshop.ro</h1></a>
+          </li>
           <li>
             <a href="#">Products</a>
             <ul class="submenu">
@@ -91,12 +83,18 @@
               <li><a href="#">Service 3</a></li>
             </ul>
           </li>
-          <li><a href="#">About Us</a></li>
+          <li onclick="openAboutUs()"><a href="#">About Us</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
-
+    <div id="first-print-page">
+      <h1 id="first-print-page-title">Petshop.ro</h1>
+    </div>
+    <!--Banner for Print-->
+    <div style="display: flex; width: 100%; justify-content: center">
+      <div id="print-banner">Proiect scolar</div>
+    </div>
     <main style="min-height: 200vh">
       <div id="homepage">
         <div id="homepage-grid">
@@ -133,7 +131,9 @@
                 </h2>
                 <section>
                   Incercati si
-                  <a href="https://petguru.ro/" target="_blank">Pet Guru!</a>
+                  <a href="https://petguru.ro/" target="_blank" rel="noopener"
+                    >Pet Guru!</a
+                  >
                 </section>
               </section>
               <section style="padding: 10px">
@@ -369,6 +369,52 @@
           <div class="card">hrana1</div>
         </div>
       </div>
+      <div id="about-us">
+        <div>
+          <h2 style="font-size: 25px; margin: 10px; margin-left: 0px">
+            Despre Noi
+          </h2>
+          Bine ați venit la Pet Paradise, locul unde iubirea pentru animale și
+          grija pentru bunăstarea lor se împletesc armonios! Suntem o echipă de
+          profesioniști dedicați, pasionați de tot ceea ce înseamnă îngrijirea
+          și fericirea prietenilor noștri necuvântători.
+          <h2 style="font-size: 25px; margin: 10px; margin-left: 0px">
+            Cine Suntem?
+          </h2>
+          Pet Paradise este mai mult decât un simplu magazin pentru animale de
+          companie. Suntem o familie unită de dragostea pentru animale și
+          dorința de a le oferi cele mai bune condiții de viață. Cu o experiență
+          de peste 10 ani în domeniu, ne-am dedicat să aducem pe piață produse
+          de calitate superioară și servicii excepționale pentru animalele
+          voastre de companie.
+        </div>
+
+        <video
+          style="
+            margin-top: 40px;
+            width: 30%;
+            max-width: 500px;
+            min-width: 300px;
+          "
+          controls
+          poster="resurse/images/cat.jpg"
+          src="resurse/videos/dogs.mp4"
+        >
+          <track
+            src="resurse/videos/captions-dogs-en.vtt"
+            kind="captions"
+            srclang="en"
+            label="English"
+          />
+          <track
+            src="resurse/videos/captions-dogs.vtt"
+            kind="captions"
+            srclang="ro"
+            label="Romanian"
+            default
+          />
+        </video>
+      </div>
     </main>
 
     <footer id="footer">
@@ -429,16 +475,26 @@
 
         document.getElementById("recomandari").style.display = "none";
         document.getElementById("hrana-caini").style.display = "none";
+        document.getElementById("about-us").style.display = "none";
       }
       function openRecomandari() {
         document.getElementById("recomandari").style.display = "block";
 
         document.getElementById("homepage").style.display = "none";
         document.getElementById("hrana-caini").style.display = "none";
+        document.getElementById("about-us").style.display = "none";
       }
       function openHranaCaini() {
         document.getElementById("hrana-caini").style.display = "block";
 
+        document.getElementById("homepage").style.display = "none";
+        document.getElementById("recomandari").style.display = "none";
+        document.getElementById("about-us").style.display = "none";
+      }
+      function openAboutUs() {
+        document.getElementById("about-us").style.display = "block";
+
+        document.getElementById("hrana-caini").style.display = "none";
         document.getElementById("homepage").style.display = "none";
         document.getElementById("recomandari").style.display = "none";
       }

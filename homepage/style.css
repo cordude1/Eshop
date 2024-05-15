@@ -9,6 +9,137 @@
   --green: #61f363;
 }
 
+a[href^="https:"]::before {
+  content: "⮳";
+  font-size: 1.5rem;
+}
+
+a[href^="https:"]:hover::before {
+  color: var(--green); /* Change color on hover */
+}
+
+a:visited {
+  color: var(--secondary);
+}
+
+#homepage a:active {
+  border: 1px solid black;
+}
+
+#homepage a {
+  background-image: radial-gradient(
+    rgba(0, 200, 200, 0.15),
+    rgba(0, 150, 150, 0.15),
+    transparent 70%
+  );
+  background-size: 0px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:0.3s;
+}
+
+#homepage a:hover {
+  background-image: radial-gradient(
+    rgba(0, 200, 200, 0.15),
+    rgba(0, 150, 150, 0.15),
+    transparent 70%
+  );
+  background-size: 100% 100%;
+  transition:0.3s;
+
+}
+
+@media print {
+  /* All your print styles go here */
+  #print-banner {
+    display: block !important;
+  }
+  #to-top-button-container {
+    display: none !important;
+  }
+
+  #first-print-page {
+    display: block !important;
+  }
+
+  img,
+  iframe,
+  video {
+    display: none !important;
+  }
+
+  #homepage-grid {
+    display: block !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  header {
+    display: none !important;
+  }
+  #watermark {
+    display: flex !important;
+  }
+}
+
+#to-top-button-container {
+  display: flex;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  flex-grow: 1;
+  opacity: 0.6;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+}
+
+#first-print-page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#first-print-page-title {
+  position: absolute;
+  left: 45%;
+  top: 48%;
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+
+#about-us {
+  display: none;
+}
+
+#watermark {
+  position: fixed;
+  z-index: 99999;
+  width: 100px;
+  height: 2cm;
+  border: 8px double black;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 40px;
+  top: 40px;
+  transform: rotate(20deg);
+  opacity: 0.65;
+  display: none;
+}
+
+#print-banner {
+  border: 2px dotted black;
+  width: 80%;
+  margin: 20px;
+  padding: 10px;
+  display: none;
+}
+
 #program {
   border-spacing: 4px;
 }
