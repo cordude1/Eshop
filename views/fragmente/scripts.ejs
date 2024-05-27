@@ -1,0 +1,70 @@
+<script>
+  var selected_tab = 1;
+  var items_in_cart = 0;
+
+  function addProductToCart() {
+    items_in_cart = items_in_cart + 1;
+    //sau: items_in_cart+=1;
+    //sau: items_in_cart++;
+
+    if (items_in_cart > 0) {
+      document.getElementById("cart-badge").style.display = "flex";
+      document.getElementById("cart-badge").innerHTML = items_in_cart;
+    }
+  }
+
+  function handleTabs() {
+    if (selected_tab == 1) {
+      //show video 1
+      document.getElementById("video1").style.display = "block";
+      document.getElementById("video2").style.display = "none";
+    } else if (selected_tab == 2) {
+      //show video 2
+      document.getElementById("video2").style.display = "block";
+      document.getElementById("video1").style.display = "none";
+    }
+  }
+
+  function handleTabClick(tabNumber) {
+    if (tabNumber == 1) selected_tab = 1;
+    else if (tabNumber == 2) selected_tab = 2;
+    handleTabs();
+  }
+
+  function generateUsers() {
+    var randomNumber = Math.floor(Math.random() * 20);
+    document.getElementById("users").innerHTML = randomNumber;
+  }
+
+  function getSiteData() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var site_url = window.location.href;
+    document.getElementById("date-site").innerHTML =
+      "latime:" +
+      width +
+      "px" +
+      "\n" +
+      "inaltime:" +
+      height +
+      "px" +
+      "\n" +
+      "URL:" +
+      site_url;
+  }
+
+  var hamburgerMenuIsOpen = false;
+  function clickHamburger() {
+    if (hamburgerMenuIsOpen == false) {
+      hamburgerMenuIsOpen = true;
+      document.getElementsByClassName("menu")[0].style.display = "block";
+    } else {
+      hamburgerMenuIsOpen = false;
+      document.getElementsByClassName("menu")[0].style.display = "none";
+    }
+  }
+
+  getSiteData();
+  generateUsers();
+  handleTabs();
+</script>

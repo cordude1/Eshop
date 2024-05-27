@@ -1,0 +1,31 @@
+{
+  "imagini": [
+    {
+      "cale_fisier": "/resurse/images/gallery/picture1.jpeg",
+      "titlu": "Imagine 1",
+      "text_descriere": "Descriere imagine 1",
+      "anotimp": "iarna",
+      "tip": "toate"
+    },
+    {
+      "cale_fisier": "/resurse/images/gallery/picture2.jpeg",
+      "titlu": "Imagine 2",
+      "text_descriere": "Descriere imagine 2",
+      "anotimp": "vara",
+      "tip": "pisici"
+    },
+    {
+      "cale_fisier": "/resurse/images/gallery/picture3.jpg",
+      "titlu": "Imagine 3",
+      "text_descriere": "Descriere imagine 3",
+      "tip": "catei"
+    },
+    {
+      "cale_fisier": "/resurse/images/gallery/picture4.jpg",
+      "titlu": "Imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "anotimp": "primavara",
+      "tip": "toate"
+    }
+  ]
+}
