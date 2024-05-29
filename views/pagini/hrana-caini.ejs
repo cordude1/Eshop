@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../fragmente/head.ejs"); %>
+
+  <body style="overflow-x: hidden">
+    <%- include("../fragmente/header.ejs"); %> <%-
+    include("../fragmente/fixed-elements.ejs"); %>
+    <div>
+      <div id="hrana-caini-grid" style="min-height: 80vh;">
+        <div class="card-hrana" onclick="addProductToCart()">hrana_x</div>
+        <div class="card-hrana" onclick="addProductToCart()">hrana_y</div>
+        <div class="card-hrana" onclick="addProductToCart()">hrana_z</div>
+      </div>
+    </div>
+    <%- include("../fragmente/footer.ejs"); %> <%-
+    include("../fragmente/scripts.ejs"); %>
+  </body>
+</html>
