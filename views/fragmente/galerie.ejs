@@ -1,25 +1,29 @@
 <div>
-  <div style="display: flex; justify-content: space-between; margin-top: 40px">
-    <% images.forEach((image, index) => { %>
-    <figure>
-      <picture>
-        <source
-          media="(max-width: 600px)"
-          srcset="/images/<%= image.cale_fisier %>"
-        />
-        <source
-          media="(max-width: 900px)"
-          srcset="/images/<%= image.cale_fisier %>"
-        />
-        <img
-          style="width: 200px"
-          src="<%= image.cale_fisier %>"
-          alt="<%= image.alt || image.titlu %>"
-          title="<%= image.text_descriere %>"
-        />
-      </picture>
-      <figcaption><%= index + 1 %>. <%= image.titlu %></figcaption>
-    </figure>
-    <% }) %>
-  </div>
+  <marquee style="display: flex; flex-direction: row" spee>
+    <div
+      style="display: flex; justify-content: space-between; margin-top: 40px"
+    >
+      <% images.forEach((image, index) => { %>
+      <figure style="margin-left: 40px;margin-right: 40px;">
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="/images/<%= image.cale_fisier %>"
+          />
+          <source
+            media="(max-width: 900px)"
+            srcset="/images/<%= image.cale_fisier %>"
+          />
+          <img
+            style="width: 200px"
+            src="<%= image.cale_fisier %>"
+            alt="<%= image.alt || image.titlu %>"
+            title="<%= image.text_descriere %>"
+          />
+        </picture>
+        <figcaption><%= index + 1 %>. <%= image.titlu %></figcaption>
+      </figure>
+      <% }) %>
+    </div>
+  </marquee>
 </div>

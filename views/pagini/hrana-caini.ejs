@@ -6,13 +6,147 @@
     <%- include("../fragmente/header.ejs"); %> <%-
     include("../fragmente/fixed-elements.ejs"); %>
     <div>
-      <div id="hrana-caini-grid" style="min-height: 80vh;">
-        <div class="card-hrana" onclick="addProductToCart()">hrana_x</div>
-        <div class="card-hrana" onclick="addProductToCart()">hrana_y</div>
-        <div class="card-hrana" onclick="addProductToCart()">hrana_z</div>
+      <div style="padding: 10px; display: flex">
+        <select onchange="updateFilters(event.target.value)">
+          <option value="">toate</option>
+          <option value="Mâncare">Mâncare</option>
+          <option value="Jucării">Jucării</option>
+          <option value="Accesorii">Accesorii</option>
+          <option value="Îngrijire">Îngrijire</option>
+        </select>
+
+        <div style="margin-left: 10px">Pret:</div>
+        <input
+          type="number"
+          value="0"
+          style="width: 70px; margin-left: 10px"
+          onchange="updateMinPrice(event.target.value)"
+        />
+        <div style="margin-right: 5px; margin-left: 5px">-</div>
+        <input
+          type="number"
+          value="999"
+          style="width: 70px"
+          onchange="updateMaxPrice(event.target.value)"
+        />
+      </div>
+      <div
+        id="hrana-caini-grid"
+        style="min-height: 80vh; display: flex; flex-wrap: wrap"
+      >
+        <div
+          id="shop-items"
+          style="display: flex; flex-direction: row; flex-wrap: wrap"
+        ></div>
       </div>
     </div>
     <%- include("../fragmente/footer.ejs"); %> <%-
     include("../fragmente/scripts.ejs"); %>
+
+    <script>
+      let filtru = "";
+      let min = 0;
+      let max = 999;
+
+      const produsePetShop = [
+        {
+          nume: "Mâncare pentru câini Royal Canin",
+          pret: 150.0,
+          categorie: "Mâncare",
+        },
+        { nume: "Jucărie câine Frisbee", pret: 20.0, categorie: "Jucării" },
+        { nume: "Litiere pentru pisici", pret: 80.0, categorie: "Accesorii" },
+        {
+          nume: "Mâncare pentru pisici Whiskas",
+          pret: 120.0,
+          categorie: "Mâncare",
+        },
+        { nume: "Colivie papagali", pret: 200.0, categorie: "Accesorii" },
+        { nume: "Acvariu 50L", pret: 300.0, categorie: "Accesorii" },
+        {
+          nume: "Hrănitoare automată câini",
+          pret: 250.0,
+          categorie: "Accesorii",
+        },
+        { nume: "Perie pentru pisici", pret: 15.0, categorie: "Îngrijire" },
+        { nume: "Jucărie hamster roată", pret: 30.0, categorie: "Jucării" },
+        {
+          nume: "Mâncare pentru pești Tetra",
+          pret: 25.0,
+          categorie: "Mâncare",
+        },
+        { nume: "Cușcă pentru iepuri", pret: 180.0, categorie: "Accesorii" },
+        { nume: "Guler elisabetan câini", pret: 40.0, categorie: "Îngrijire" },
+        { nume: "Ham pentru câini", pret: 60.0, categorie: "Accesorii" },
+        {
+          nume: "Șampon pentru câini și pisici",
+          pret: 35.0,
+          categorie: "Îngrijire",
+        },
+        { nume: "Jucărie pisici șoricel", pret: 10.0, categorie: "Jucării" },
+        { nume: "Mâncare pentru păsări", pret: 50.0, categorie: "Mâncare" },
+        {
+          nume: "Cușcă transport animale",
+          pret: 120.0,
+          categorie: "Accesorii",
+        },
+        { nume: "Pătuț pentru câini", pret: 70.0, categorie: "Accesorii" },
+        { nume: "Tunel joacă pisici", pret: 45.0, categorie: "Jucării" },
+        { nume: "Lac pentru ochi câini", pret: 20.0, categorie: "Îngrijire" },
+      ];
+
+      function afiseazaProduse() {
+        const shopItemsDiv = document.getElementById("shop-items");
+        if (shopItemsDiv) shopItemsDiv.innerHTML = "";
+
+        produsePetShop
+          .filter((el) => {
+            if (
+              (el.categorie === filtru || filtru === "") &&
+              el.pret >= min &&
+              el.pret <= max
+            )
+              return true;
+            else return false;
+          })
+          .forEach((produs) => {
+            const card = document.createElement("div");
+            card.className = "hrana-caini-card";
+            card.onclick = addProductToCart;
+
+            const produsNume = document.createElement("h2");
+            produsNume.textContent = produs.nume;
+            card.appendChild(produsNume);
+
+            const produsPret = document.createElement("p");
+            produsPret.textContent = `Preț: ${produs.pret} RON`;
+            card.appendChild(produsPret);
+
+            const produsCategorie = document.createElement("p");
+            produsCategorie.textContent = `Categorie: ${produs.categorie}`;
+            card.appendChild(produsCategorie);
+
+            shopItemsDiv.appendChild(card);
+          });
+      }
+
+      // Apelează funcția pentru a afișa produsele când pagina este încărcată
+      document.addEventListener("DOMContentLoaded", afiseazaProduse);
+
+      function updateFilters(filter) {
+        filtru = filter;
+        afiseazaProduse();
+      }
+
+      function updateMinPrice(price) {
+        min = price;
+        afiseazaProduse();
+      }
+
+      function updateMaxPrice(price) {
+        max = price;
+        afiseazaProduse();
+      }
+    </script>
   </body>
 </html>

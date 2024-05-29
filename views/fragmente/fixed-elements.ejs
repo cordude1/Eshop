@@ -15,3 +15,66 @@
 <div style="display: flex; width: 100%; justify-content: center">
   <div id="print-banner">Proiect scolar</div>
 </div>
+
+<div id="cookie-banner">
+  <div>Do you accept our cookies?</div>
+  <div>
+    <button onclick="addCookies()">YES :)</button>
+    <button STYLE="background-color: salmon;">NO :(</button>
+  </div>
+</div>
+
+<div
+  style="
+    position: fixed;
+    left: 0px;
+    bottom: 100px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 9999;
+    cursor: pointer;
+  "
+  onclick="deleteCookies()"
+>
+  Delete cookies!
+</div>
+
+<script>
+  function addCookies() {
+    document.cookie = "accepted=true";
+    checkCookies();
+  }
+
+  function deleteCookies() {
+    document.cookie =
+      "accepted=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      checkCookies();
+  }
+
+  function checkCookies() {
+    const myCookie = getCookie("accepted");
+    if (myCookie) {
+      document.getElementById("cookie-banner").style.display = "none";
+    } else {
+      document.getElementById("cookie-banner").style.display = "block";
+    }
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  checkCookies();
+</script>

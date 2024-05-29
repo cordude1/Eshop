@@ -20,7 +20,7 @@ app.get("/getPosts", (req, res) => {
   res.send("post 1, post 2, post 3");
 });
 
-app.get("/", (req, res) => {
+function renderHomepage(res) {
   const imagesData = JSON.parse(
     fs.readFileSync(__dirname + "/public/data/images.json", "utf8")
   );
@@ -30,6 +30,18 @@ app.get("/", (req, res) => {
     .filter((img) => img.anotimp === currentSeason)
     .slice(0, 10);
   res.render("pagini/homepage", { images: filteredImages });
+}
+
+app.get("/", (req, res) => {
+  renderHomepage(res);
+});
+
+app.get("/home", (req, res) => {
+  renderHomepage(res);
+});
+
+app.get("/index", (req, res) => {
+  renderHomepage(res);
 });
 
 app.get("/aboutus", (req, res) => {
