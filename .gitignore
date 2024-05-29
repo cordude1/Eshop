@@ -1,0 +1,91 @@
+# Ignore the dependency directories
+node_modules/
+vendor/
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+._*
+
+# Ignore environment variable files
+.env
+.env.local
+
+# Ignore yarn lock file
+yarn.lock
+
+# Ignore npm debug file
+npm-debug.log*
+
+# Ignore coverage reports
+coverage/
+
+# Ignore minified and cache files
+*.min.js
+*.cache
+
+# Ignore any generated files
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Ignore personal config files
+*.local
+*.secret
+
+# Ignore macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore files related to package managers
+*.gem
+*.egg
+*.egg-info
+*.debs
+*.rpm
+*.lock-wscript
+.bundled_gems
+
+# Ignore Python specific files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore SASS cache
+.sass-cache
+
+# Ignore Parcel cache
+.cache/
+
+# Ignore Webpack cache
+.cache-loader/
+
+# Ignore eslint cache
+.eslintcache
+
+# Ignore stylelint cache
+.stylelintcache
